@@ -1,0 +1,25 @@
+
+.header-row{
+    height:90px;
+    display:flex;
+    align-items:center;
+    background-color:white;
+}
+
+.header-wrapper{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+
+
+}
+
+.menü-list{
+    display:flex;
+    align-items:center;
+    column-gap:30px;
+}
