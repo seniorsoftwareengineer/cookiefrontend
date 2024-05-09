@@ -11,11 +11,13 @@ function register() {
 
     const [password,setpassword] = useState();
 
-    const Register=function(){
+    const Register=async function(){
 
-       const response= axios.post("https://ikracoskun.xyz/api/auth/register",{username:username,email:email,password:password})
+       const response=await axios.post("https://ikracoskun.xyz/api/auth/register",{username:username,email:email,password:password})
 
-        
+        console.log(response);
+
+        console.log(response.data)
 
     }
 

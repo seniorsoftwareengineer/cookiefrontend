@@ -3,7 +3,10 @@ import "../css/login.css"
 import Header from "../components/header.jsx"
 import axios from "axios"
 import {useState} from "react"
-function Login() {
+import { useNavigate } from 'react-router-dom'
+function Login(props) {
+
+  const navigate = new useNavigate();
 
   const [username,setusername] =useState();
 
@@ -15,9 +18,16 @@ function Login() {
 
 
     const response= await axios.post("https://ikracoskun.xyz/api/auth/login",{username:username,password:password})
+    console.log(response.data.successful);
 
-    console.log(response.data);
-    
+    if(response.data.successful) 
+    {
+      props.setuser(response.data.user);
+      navigate("/");
+    }
+
+
+
     }
   
 
